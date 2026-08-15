@@ -115,6 +115,13 @@
     padding: 24px 26px; border-radius: 0 var(--radius) var(--radius) 0;
     font-family: Georgia, serif; font-style: italic; font-size: 1.05rem; color: var(--accent-deep);
   }
+  .about-photo { margin-top: 28px; }
+  .about-photo img {
+    display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 22%;
+    border-radius: var(--radius); border: 1px solid var(--line);
+    box-shadow: 0 12px 30px rgba(43,33,24,.12);
+  }
+  .about-photo figcaption { font-size: .84rem; color: var(--ink-faint); margin-top: 10px; text-align: center; font-style: italic; }
   .lang-row { margin-top: 20px; display: flex; gap: 8px; flex-wrap: wrap; }
 
   /* TIMELINE */
@@ -157,6 +164,8 @@
   .proj h3 { font-size: 1.1rem; margin-bottom: 8px; }
   .proj .tag { display: inline-block; font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; font-weight: 700; color: var(--accent-deep); background: var(--accent-soft); padding: 3px 10px; border-radius: 999px; margin-bottom: 12px; margin-right: 6px; }
   .proj p { font-size: .95rem; color: var(--ink-soft); }
+  .proj p + p { margin-top: 10px; }
+  .proj > div > img { width: 100%; max-width: 560px; border-radius: 10px; border: 1px solid var(--line); margin-top: 16px; display: block; }
   .proj-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-top: 18px; }
   .proj-gallery img {
     width: 100%; height: 160px; object-fit: cover; border-radius: 10px;
@@ -265,8 +274,14 @@
           <span class="chip">Bikolano — native</span>
         </div>
       </div>
-      <div class="callout">
-        "Concrete over corporate: I don't just say 'detail-oriented' — I proof every order document before it goes to print."
+      <div>
+        <div class="callout">
+          "Concrete over corporate: I don't just say 'detail-oriented' — I proof every order document before it goes to print."
+        </div>
+        <figure class="about-photo">
+          <img src="assets/aia-about.jpg" alt="Aia hello">
+          <figcaption>Me and the laptop that runs it all — stickers included.</figcaption>
+        </figure>
       </div>
     </div>
   </div>
@@ -410,7 +425,6 @@
       <span class="tag">Data Privacy</span>
       <h3>Thesis Data Management (RA 10173 Compliance)</h3>
       <p>Managed mixed-methods research data: Excel data cleaning, a data dictionary, consent forms, and breach-response protocols under the Philippine Data Privacy Act.</p>
-      <br>
       <p>Performed as research lead for undergraduate thesis titled "Improving Library Facility Utilization Among SCIS Students at the University of Nueva Caceres"</p>
     </div>
 
@@ -418,16 +432,14 @@
       <span class="tag">Metadata</span>
       <h3>Metadata Schema for Faster Retrieval</h3>
       <p>Applied standardized metadata schemas to a collection, cutting search time and improving findability of resources.</p>
-      <br><p>Participated in database ledger project for St. Peter Life Plan</p>
+      <p>Participated in database ledger project for St. Peter Life Plan</p>
     </div>
 
     <div class="proj">
       <span class="tag">Writing</span><span class="tag">Leadership</span>
       <h3>Published Writing &amp; Org Communications</h3>
       <p>Feature articles for <em>The DEMOCRAT</em>, plus social media captions, project proposals, and certificate citations for Black Box Society and UNC Women's Club for previous years.</p>
-      <br><p>Currently handling Secretariat roles at 1. School of Computer and Information Sciences Sctudent Council (Secretary), BLIS Student Org (Secretary), 
-        University of Nueva Caceres - Protection of Animal Welfare - Students' Association PAWSA (Deputy Secretary) and 
-        Directorate responsibilities at University Student Government English Immersive Environment (Assistant Director)</p>
+      <p>Currently serving as Secretary, School of Computer and Information Sciences Student Council · Secretary, BLIS Student Org · Deputy Secretary, UNC Protection of Animal Welfare — Students' Association (PAWSA) · Assistant Director, University Student Government English Immersive Environment.</p>
     </div>
   </div>
 </section>
@@ -588,9 +600,9 @@
       <div class="sec-label" style="color:#f5b57e;">Contact</div>
       <h2>Let's work together.</h2>
       <p class="lead">If your operations need someone precise, reliable, and easy to work with — I'd love to hear from you.</p>
-      <a class="btn" href="/cdn-cgi/l/email-protection#ccada5adafadbcbea5afa4a38caba1ada5a0e2afa3a1">Email me →</a>
+      <a class="btn" href="/cdn-cgi/l/email-protection#c7a6aea6a4a6b7b5aea4afa887a0aaa6aeabe9a4a8aa">Email me →</a>
       <div class="contact-links">
-        <div><span class="label">Email</span><a href="/cdn-cgi/l/email-protection#64050d05070514160d070c0b240309050d084a070b09"><span class="__cf_email__" data-cfemail="07666e66646677756e646f6847606a666e6b2964686a">[email&#160;protected]</span></a></div>
+        <div><span class="label">Email</span><a href="/cdn-cgi/l/email-protection#64050d05070514160d070c0b240309050d084a070b09"><span class="__cf_email__" data-cfemail="4a2b232b292b3a38232922250a2d272b232664292527">[email&#160;protected]</span></a></div>
         <div><span class="label">Phone / SMS</span><a href="tel:+639685863037">+63 968 586 3037</a></div>
         <div><span class="label">LinkedIn</span><a href="https://linkedin.com/in/aia-nyll-capricho-9aa18b381" target="_blank" rel="noopener">aia-nyll-capricho</a></div>
         <div><span class="label">Off-duty</span><a href="https://www.instagram.com/potatoepoopy" target="_blank" rel="noopener">@potatoepoopy</a></div>
@@ -604,5 +616,5 @@
   <div class="wrap">© 2026 Aia Nyll Capricho · Built with HTML &amp; CSS (yes, by me)</div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a2b941e8bd99a0d8',t:'MTc4NjgwODAwMw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
 </html>
