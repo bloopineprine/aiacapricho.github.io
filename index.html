@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aia Nyll Capricho — Virtual Assistant | Admin, Operations & Data Management</title>
+<meta name="description" content="Remote virtual assistant and operations specialist with 6+ years supporting a UK online retailer. Customer support, order processing, data entry, and record keeping.">
+<style>
+  :root {
+    --ink: #2b2118;
+    --ink-soft: #5c5248;
+    --ink-faint: #93887c;
+    --bg: #fffdf9;
+    --bg-alt: #faf3ea;
+    --accent: #e2711d;
+    --accent-dark: #b95810;
+    --accent-deep: #8f4207;
+    --accent-soft: #fdeadb;
+    --card: #ffffff;
+    --line: #efe4d6;
+    --radius: 14px;
+    --maxw: 1040px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.65;
+    font-size: 17px;
+  }
+  h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; line-height: 1.2; }
+  a { color: var(--accent-dark); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(255,253,249,.92); backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 14px 24px; max-width: var(--maxw); margin: 0 auto; }
+  .brand { font-family: Georgia, serif; font-weight: 700; font-size: 1.15rem; color: var(--ink); }
+  .brand span { color: var(--accent); }
+  .nav-links { display: flex; gap: 22px; font-size: .92rem; }
+  .nav-links a { color: var(--ink-soft); font-weight: 500; }
+  .nav-links a:hover { color: var(--accent-dark); text-decoration: none; }
+  .nav-cta {
+    background: var(--accent); color: #fff !important; padding: 8px 18px;
+    border-radius: 999px; font-weight: 600;
+  }
+  .nav-cta:hover { background: var(--accent-dark); text-decoration: none; }
+  @media (max-width: 720px) { .nav-links a:not(.nav-cta) { display: none; } }
+
+  /* HERO */
+  header.hero { padding: 90px 0 70px; }
+  .eyebrow {
+    display: inline-block; font-size: .8rem; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--accent-deep); font-weight: 700; margin-bottom: 18px;
+    background: var(--accent-soft); padding: 6px 14px; border-radius: 999px;
+  }
+  .hero h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); margin-bottom: 22px; max-width: 720px; }
+  .hero h1 em { color: var(--accent); font-style: normal; }
+  .hero p.sub { font-size: 1.15rem; color: var(--ink-soft); max-width: 640px; margin-bottom: 34px; }
+  .btn-row { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+  .btn {
+    display: inline-block; background: var(--accent); color: #fff; padding: 14px 30px;
+    border-radius: 999px; font-weight: 600; font-size: 1rem; transition: background .2s;
+  }
+  .btn:hover { background: var(--accent-dark); text-decoration: none; }
+  .btn-ghost { background: transparent; color: var(--accent-dark); border: 2px solid var(--accent); padding: 12px 28px; }
+  .btn-ghost:hover { background: var(--accent-soft); color: var(--accent-deep); }
+  .hero-stats { display: flex; gap: 40px; margin-top: 56px; flex-wrap: wrap; }
+  .stat b { display: block; font-family: Georgia, serif; font-size: 1.9rem; color: var(--accent); }
+  .stat span { font-size: .88rem; color: var(--ink-faint); }
+
+  /* SECTIONS */
+  section { padding: 76px 0; }
+  section.alt { background: var(--bg-alt); }
+  .sec-label { font-size: .78rem; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); font-weight: 700; margin-bottom: 10px; }
+  h2 { font-size: clamp(1.7rem, 3.4vw, 2.3rem); margin-bottom: 28px; }
+  .lead { font-size: 1.08rem; color: var(--ink-soft); max-width: 700px; margin-bottom: 34px; }
+
+  /* ABOUT */
+  .about-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 48px; align-items: start; }
+  @media (max-width: 800px) { .about-grid { grid-template-columns: 1fr; } }
+  .about-grid p { margin-bottom: 18px; color: var(--ink-soft); }
+  .about-grid p strong { color: var(--ink); }
+  .callout {
+    background: var(--accent-soft); border-left: 4px solid var(--accent);
+    padding: 24px 26px; border-radius: 0 var(--radius) var(--radius) 0;
+    font-family: Georgia, serif; font-style: italic; font-size: 1.05rem; color: var(--accent-deep);
+  }
+  .lang-row { margin-top: 20px; display: flex; gap: 8px; flex-wrap: wrap; }
+
+  /* TIMELINE */
+  .job { border-left: 3px solid var(--line); padding: 0 0 38px 28px; position: relative; }
+  .job:last-child { padding-bottom: 0; }
+  .job::before {
+    content: ""; position: absolute; left: -8.5px; top: 6px; width: 14px; height: 14px;
+    border-radius: 50%; background: var(--accent); border: 3px solid var(--bg);
+  }
+  section.alt .job::before { border-color: var(--bg-alt); }
+  .job h3 { font-size: 1.25rem; margin-bottom: 4px; }
+  .job .meta { font-size: .9rem; color: var(--ink-faint); margin-bottom: 14px; }
+  .job ul { list-style: none; }
+  .job li { padding-left: 22px; position: relative; margin-bottom: 9px; color: var(--ink-soft); font-size: .98rem; }
+  .job li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+
+  /* CARDS */
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 22px; }
+  .card {
+    background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 28px 24px; transition: transform .18s, box-shadow .18s;
+  }
+  .card:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(43,33,24,.09); }
+  .card .icon {
+    width: 46px; height: 46px; border-radius: 12px; background: var(--accent-soft);
+    display: flex; align-items: center; justify-content: center; margin-bottom: 16px;
+    font-size: 1.3rem;
+  }
+  .card h3 { font-size: 1.08rem; margin-bottom: 8px; }
+  .card p { font-size: .92rem; color: var(--ink-soft); }
+
+  /* PROJECTS */
+  .privacy-note {
+    background: var(--accent-soft); border: 1px solid #f6d4b3; border-radius: var(--radius);
+    padding: 18px 24px; font-size: .93rem; color: var(--accent-deep); margin-bottom: 36px; max-width: 760px;
+  }
+  .proj-group-title { font-family: Georgia, serif; font-size: 1.3rem; margin: 44px 0 20px; }
+  .proj-group-title:first-of-type { margin-top: 0; }
+  .proj { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; margin-bottom: 18px; }
+  .proj h3 { font-size: 1.1rem; margin-bottom: 8px; }
+  .proj .tag { display: inline-block; font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; font-weight: 700; color: var(--accent-deep); background: var(--accent-soft); padding: 3px 10px; border-radius: 999px; margin-bottom: 12px; margin-right: 6px; }
+  .proj p { font-size: .95rem; color: var(--ink-soft); }
+  .proj-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-top: 18px; }
+  .proj-gallery img {
+    width: 100%; height: 160px; object-fit: cover; border-radius: 10px;
+    border: 1px solid var(--line); background: var(--bg-alt);
+  }
+  .proj-gallery img.tall { height: 200px; }
+  .placeholder {
+    margin-top: 14px; border: 2px dashed #edd7bd; border-radius: 10px; padding: 14px 18px;
+    font-size: .85rem; color: var(--ink-faint); background: var(--bg-alt);
+  }
+
+  /* SKILLS */
+  .skill-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px; }
+  .skill-col h3 { font-size: 1.05rem; margin-bottom: 14px; color: var(--accent-deep); }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip { background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 6px 15px; font-size: .86rem; color: var(--ink-soft); }
+  .strengths { margin-top: 36px; padding-top: 26px; border-top: 1px solid var(--line); font-size: .95rem; color: var(--ink-soft); }
+  .strengths b { color: var(--ink); }
+
+  /* TOOLS */
+  .tool-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 22px; }
+  .tool-group { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px 26px; }
+  .tool-group h3 { font-size: .95rem; letter-spacing: .04em; text-transform: uppercase; color: var(--accent-deep); margin-bottom: 14px; font-family: inherit; }
+  .tool-group .chips .chip.hot { background: var(--accent-soft); border-color: #f2cfa9; color: var(--accent-deep); font-weight: 600; }
+  .tools-note { margin-top: 28px; font-size: .95rem; color: var(--ink-soft); font-style: italic; }
+  .legend { margin-top: 14px; font-size: .8rem; color: var(--ink-faint); }
+  .legend .chip { padding: 2px 10px; font-size: .75rem; }
+
+  /* EDUCATION */
+  .edu-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; }
+  @media (max-width: 800px) { .edu-grid { grid-template-columns: 1fr; } }
+  .edu-item { margin-bottom: 26px; }
+  .edu-item h3 { font-size: 1.08rem; margin-bottom: 4px; }
+  .edu-item .meta { font-size: .88rem; color: var(--ink-faint); margin-bottom: 8px; }
+  .edu-item p { font-size: .92rem; color: var(--ink-soft); }
+  .cert-list { list-style: none; }
+  .cert-list li { padding: 11px 0 11px 30px; position: relative; border-bottom: 1px solid var(--line); font-size: .94rem; color: var(--ink-soft); }
+  .cert-list li::before { content: "✓"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+
+  /* CONTACT */
+  .contact-box { background: var(--ink); color: #f2ece5; border-radius: 20px; padding: 60px 48px; text-align: center; }
+  .contact-box h2 { color: #fff; }
+  .contact-box .lead { color: #c9c0b5; margin: 0 auto 34px; }
+  .contact-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px 34px; margin-top: 36px; font-size: .95rem; }
+  .contact-links a { color: #f5b57e; }
+  .contact-links span.label { color: #8d8378; margin-right: 6px; }
+
+  footer { padding: 34px 0; text-align: center; font-size: .85rem; color: var(--ink-faint); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="brand">Aia<span>.</span></div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#background">Background</a>
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#tools">Tools</a>
+      <a href="#contact" class="nav-cta">Let's talk</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Virtual Assistant · Admin, Operations & Data Management</span>
+    <h1>Hi, I'm Aia. Ready to <em>streamline your operations?</em></h1>
+    <p class="sub">For 6+ years I've been the remote right hand of a UK online retailer — handling customer conversations, order processing, and the business records that keep everything running. Precise, reliable, and genuinely happy in a spreadsheet.</p>
+    <div class="btn-row">
+      <a class="btn" href="#contact">Let's work together →</a>
+      <a class="btn btn-ghost" href="#projects">See my work</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><b>6+</b><span>years remote experience</span></div>
+      <div class="stat"><b>4</b><span>support channels, daily</span></div>
+      <div class="stat"><b>C1</b><span>professional English</span></div>
+      <div class="stat"><b>20+</b><span>tools in my kit</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="about" class="alt">
+  <div class="wrap">
+    <div class="sec-label">About Me</div>
+    <h2>People on one screen, records on the other.</h2>
+    <div class="about-grid">
+      <div>
+        <p>I'm a remote administrative and operations specialist based in <strong>Naga City, Philippines</strong>, working daily with UK clients since 2020. I work in three languages — English, Filipino, and Bikolano — which makes communicating precisely (and kindly) second nature.</p>
+        <p>My work lives at the intersection of <strong>people and records</strong>: one minute I'm on LiveChat walking a customer through their order, the next I'm proofing job documents before they hit production, designing the label layouts that ship with cut-to-size boards, or building the tracker that makes sure nothing slips through. Six years with one company has taught me what "reliable" actually means — showing up every day, catching the small errors before they become big ones, and keeping data clean enough that anyone can find what they need in seconds.</p>
+        <p>I'm currently completing a <strong>Bachelor of Library and Information Science</strong> — which is a fancy way of saying I study how information should be organized, protected, and found. The academic version of what I already do for a living.</p>
+        <div class="lang-row chips">
+          <span class="chip">🇬🇧 English — C1, daily professional use</span>
+          <span class="chip">🇵🇭 Filipino — native</span>
+          <span class="chip">Bikolano — native</span>
+        </div>
+      </div>
+      <div class="callout">
+        "Concrete over corporate: I don't just say 'detail-oriented' — I proof every order document before it goes to print."
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="background">
+  <div class="wrap">
+    <div class="sec-label">My Background</div>
+    <h2>An unusual path that built one consistent muscle.</h2>
+    <p class="lead">Electronics engineering, then a print retailer's back office, now information science — every step has been about making complex systems run cleanly.</p>
+
+    <div class="job">
+      <h3>Record Keeper · Administrative Assistant · Customer Service</h3>
+      <div class="meta">Online Retail Services Ltd (MDF Direct · Ply Direct · MFC Direct) — London, UK (Remote) · June 2020 – Present</div>
+      <ul>
+        <li>Support UK customers across LiveChat, email, SMS (JustCall), and phone — daily client communication for 6+ years</li>
+        <li>Manage the full order cycle: prepare documents, proof for accuracy, secure client approval before production, archive records</li>
+        <li>Design layouts for order labels and sample cards, prioritizing legibility and print quality</li>
+        <li>Build and maintain order logs, client databases, proofing trackers, and packing-slip workflows</li>
+        <li>Research clients and products for cold marketing and operations support</li>
+        <li>Track workflows in Monday.com against tight production deadlines</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <h3>Virtual Assistant & Data Entry Specialist</h3>
+      <div class="meta">Independent Client Services — Remote, Philippines · 2020 – 2023</div>
+      <ul>
+        <li>Data entry, email/LiveChat assistance, order paperwork accuracy checks, and admin coordination</li>
+        <li>Document prep and marketing collateral in Canva — layouts, captions, product descriptions</li>
+        <li>Organized digital business files for accuracy, consistent structure, and fast retrieval</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <h3>Student leader &amp; writer</h3>
+      <div class="meta">University of Nueva Caceres · 2023 – Present</div>
+      <ul>
+        <li>Feature Writer, <em>The DEMOCRAT</em> — the university's independent student publication</li>
+        <li>Secretary, Black Box Society · Public Relations, UNC Women's Club · Service Awardee, Community Extensions Volunteers</li>
+        <li>Writing that ships: publication articles, project proposals, certificate citations, social media captions</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <h3>The pivot that makes sense</h3>
+      <div class="meta">BS Electronics &amp; Communications Engineering → BLIS · 2018 – present</div>
+      <ul>
+        <li>Two years (60+ units) of engineering gave me hands-on hardware, networking, and troubleshooting skills</li>
+        <li>Shifted to Library &amp; Information Science when I realized the part of every job I loved most was the information — organizing it, protecting it, making it findable</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="alt">
+  <div class="wrap">
+    <div class="sec-label">Services</div>
+    <h2>How I can help.</h2>
+    <div class="cards">
+      <div class="card"><div class="icon">💬</div><h3>Customer Support</h3><p>Email, SMS &amp; LiveChat — timely, professional assistance across every channel, with the tone of someone who's done it daily for six years.</p></div>
+      <div class="card"><div class="icon">🗂️</div><h3>Data Entry &amp; Records</h3><p>Accurate input, clean organization, and audit-ready record keeping. Your data stays consistent, current, and findable.</p></div>
+      <div class="card"><div class="icon">📦</div><h3>Order Processing</h3><p>End-to-end order management: document prep, accuracy proofing before production, client approvals, packing slips, and archiving.</p></div>
+      <div class="card"><div class="icon">📧</div><h3>Email Management</h3><p>Organize, prioritize, and respond — an uncluttered inbox and no dropped threads.</p></div>
+      <div class="card"><div class="icon">📅</div><h3>Calendar Management</h3><p>Appointments, meetings, and deadlines optimized — conflicts prevented before they happen.</p></div>
+      <div class="card"><div class="icon">🔍</div><h3>Research</h3><p>Client, product, and topic research compiled into clear, concise reports and organized reference files.</p></div>
+      <div class="card"><div class="icon">📝</div><h3>Document Preparation</h3><p>Professional documents, presentations, and spreadsheets — created, formatted, and edited.</p></div>
+      <div class="card"><div class="icon">📁</div><h3>File Management</h3><p>Digital files and folders organized for easy access and secure storage.</p></div>
+    </div>
+    <p style="margin-top:32px; color:var(--ink-soft);">Need something that's not on this list? <a href="#contact"><strong>Ask — I learn fast →</strong></a></p>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-label">Key Projects & Work Samples</div>
+    <h2>Real work, shown responsibly.</h2>
+    <div class="privacy-note">
+      🔒 For data-privacy reasons I can't showcase most of my day-to-day output — live orders, client records, and support transcripts stay confidential. Below are samples that are safe to share and reflect the quality of my work.
+    </div>
+
+    <div class="proj-group-title">From my day job — Online Retail Services Ltd</div>
+
+    <div class="proj">
+      <span class="tag">Design</span><span class="tag">Production</span>
+      <h3>Label &amp; Sample Card Layouts</h3>
+      <p>Designed the layouts for cut-to-size board labels and sample cards used in production — legibility-first design, including a set of simple instructional icons for the labels.</p>
+      <div class="proj-gallery">
+        <img class="tall" src="assets/label-layout-1.jpg" alt="Sample card layout on quarter cut oak veneered MDF board">
+        <img class="tall" src="assets/label-layout-2.jpg" alt="Cut-to-size board label layout">
+        <img class="tall" src="assets/label-layout-3.jpg" alt="Board label layout in production">
+        <img src="assets/label-icons-1.png" alt="Instructional icons designed for board labels">
+        <img src="assets/label-icons-3.png" alt="Simple icon set for label system">
+        <img src="assets/label-icons-4.png" alt="Label icon designs">
+      </div>
+    </div>
+
+    <div class="proj">
+      <span class="tag">Data Management</span><span class="tag">Research</span>
+      <h3>Product Research &amp; Stock Database</h3>
+      <p>Researched and organized the full board catalog: categories, supplier pricing, product photos, and technical specification sheets for customers with technical requirements.</p>
+      <div class="proj-gallery">
+        <img src="assets/product-research-1.png" alt="Stock information spreadsheet with material, size, stock levels and costs">
+        <img src="assets/product-research-2.png" alt="Product research database">
+        <img src="assets/product-research-3.png" alt="Board specifications organized by category">
+      </div>
+    </div>
+
+    <div class="proj">
+      <span class="tag">Outreach</span>
+      <h3>Client Research &amp; Cold Outreach</h3>
+      <p>Gathered potential clients within the niche — businesses, contact details, websites — and ran cold email outreach from the compiled lists.</p>
+    </div>
+
+    <div class="proj">
+      <span class="tag">Daily Operations</span>
+      <h3>Behind the scenes (not shown, by design)</h3>
+      <p>LiveChat, email, and SMS support · active-order record keeping · paperwork proofing · packing-slip generation and amendment. Confidential by nature — which is rather the point of hiring someone who takes data privacy seriously.</p>
+      <div class="placeholder">📌 To strengthen this section: one real metric (orders handled per week, response time, error rate) and a short testimonial from your manager.</div>
+    </div>
+
+    <div class="proj-group-title">From university — Library &amp; Information Science, UNC</div>
+
+    <div class="proj">
+      <span class="tag">Web</span>
+      <h3>UNC Engineering &amp; Architecture Library Google Site</h3>
+      <p>Built a functioning library website in Google Sites, exploring how information services can be delivered in digital form. <a href="https://sites.google.com/unc.edu.ph/unc-ea-library" target="_blank" rel="noopener">View the live site →</a></p>
+      <div class="proj-gallery">
+        <img src="assets/school-site-1.png" alt="UNC Engineering and Architecture Library Google Site">
+        <img src="assets/school-site-2.png" alt="UNC Library Filipiniana section website built with HTML and CSS">
+      </div>
+    </div>
+
+    <div class="proj">
+      <span class="tag">Web</span>
+      <h3>UNC Library Filipiniana Section Website (HTML/CSS)</h3>
+      <p>Hand-coded website for the Filipiniana section — clear navigation and user-centered information architecture.</p>
+    </div>
+
+    <div class="proj">
+      <span class="tag">Data Privacy</span>
+      <h3>Thesis Data Management (RA 10173 Compliance)</h3>
+      <p>Managed mixed-methods research data: Excel data cleaning, a data dictionary, consent forms, and breach-response protocols under the Philippine Data Privacy Act.</p>
+    </div>
+
+    <div class="proj">
+      <span class="tag">Metadata</span>
+      <h3>Metadata Schema for Faster Retrieval</h3>
+      <p>Applied standardized metadata schemas to a collection, cutting search time and improving findability of resources.</p>
+    </div>
+
+    <div class="proj">
+      <span class="tag">Writing</span><span class="tag">Leadership</span>
+      <h3>Published Writing &amp; Org Communications</h3>
+      <p>Feature articles for <em>The DEMOCRAT</em>, plus social media captions, project proposals, and certificate citations for Black Box Society and UNC Women's Club.</p>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="alt">
+  <div class="wrap">
+    <div class="sec-label">Skills</div>
+    <h2>What I bring to the table.</h2>
+    <div class="skill-cols">
+      <div class="skill-col">
+        <h3>Admin &amp; Operations</h3>
+        <div class="chips">
+          <span class="chip">Customer support (chat · email · SMS · phone)</span>
+          <span class="chip">Order processing &amp; fulfillment</span>
+          <span class="chip">Record keeping</span>
+          <span class="chip">Data entry</span>
+          <span class="chip">Document proofing</span>
+          <span class="chip">Email &amp; calendar management</span>
+          <span class="chip">Workflow monitoring</span>
+          <span class="chip">Remote collaboration</span>
+        </div>
+      </div>
+      <div class="skill-col">
+        <h3>Data &amp; Information</h3>
+        <div class="chips">
+          <span class="chip">Metadata schemas</span>
+          <span class="chip">Digital file organization</span>
+          <span class="chip">Data cleaning (Excel)</span>
+          <span class="chip">Data dictionaries</span>
+          <span class="chip">RA 10173 Data Privacy compliance</span>
+          <span class="chip">Client &amp; product research</span>
+          <span class="chip">Basic SQL</span>
+        </div>
+      </div>
+      <div class="skill-col">
+        <h3>Communication &amp; Content</h3>
+        <div class="chips">
+          <span class="chip">Professional English (C1)</span>
+          <span class="chip">Feature writing</span>
+          <span class="chip">Captions &amp; product descriptions</span>
+          <span class="chip">Label &amp; layout design</span>
+          <span class="chip">Basic image editing</span>
+          <span class="chip">Filipino &amp; Bikolano (native)</span>
+        </div>
+      </div>
+    </div>
+    <p class="strengths"><b>Core strengths:</b> attention to detail · deadline management · proactive problem-solving · independent remote work · fast learner</p>
+  </div>
+</section>
+
+<section id="tools">
+  <div class="wrap">
+    <div class="sec-label">Tools I Use</div>
+    <h2>My toolkit.</h2>
+    <div class="tool-groups">
+      <div class="tool-group">
+        <h3>Productivity &amp; Office</h3>
+        <div class="chips">
+          <span class="chip hot">Google Workspace — Advanced</span>
+          <span class="chip hot">Microsoft Office — Proficient</span>
+          <span class="chip">Publisher</span>
+          <span class="chip">Dropbox</span>
+          <span class="chip">OneDrive</span>
+        </div>
+      </div>
+      <div class="tool-group">
+        <h3>Communication &amp; Collaboration</h3>
+        <div class="chips">
+          <span class="chip hot">Gmail</span>
+          <span class="chip hot">Outlook</span>
+          <span class="chip">Slack</span>
+          <span class="chip">Microsoft Teams</span>
+          <span class="chip">Zoom</span>
+          <span class="chip">Google Meet</span>
+        </div>
+      </div>
+      <div class="tool-group">
+        <h3>Customer Support</h3>
+        <div class="chips">
+          <span class="chip hot">LiveChat — daily since 2020</span>
+          <span class="chip hot">JustCall (SMS) — daily since 2020</span>
+        </div>
+      </div>
+      <div class="tool-group">
+        <h3>Project Management &amp; Organization</h3>
+        <div class="chips">
+          <span class="chip hot">Monday.com — Proficient</span>
+          <span class="chip">ClickUp</span>
+          <span class="chip">Notion</span>
+          <span class="chip">Evernote</span>
+        </div>
+      </div>
+      <div class="tool-group">
+        <h3>Design &amp; Content</h3>
+        <div class="chips">
+          <span class="chip hot">Canva — Intermediate</span>
+          <span class="chip">Pixlr</span>
+          <span class="chip">GIMP</span>
+          <span class="chip">Photopea</span>
+        </div>
+      </div>
+      <div class="tool-group">
+        <h3>Technical</h3>
+        <div class="chips">
+          <span class="chip">SQL — queries &amp; data retrieval</span>
+          <span class="chip">HTML / CSS — simple sites (like this one)</span>
+        </div>
+      </div>
+    </div>
+    <p class="legend"><span class="chip hot">Orange</span> = daily drivers, backed by years of work use. The rest I have working background with — professionally or personally.</p>
+    <p class="tools-note">New tool in your stack? I'll learn it.</p>
+  </div>
+</section>
+
+<section id="education" class="alt">
+  <div class="wrap">
+    <div class="sec-label">Education & Certifications</div>
+    <h2>Always studying something.</h2>
+    <div class="edu-grid">
+      <div>
+        <div class="edu-item">
+          <h3>Bachelor of Library and Information Science</h3>
+          <div class="meta">University of Nueva Caceres, Naga City · 2023 – present</div>
+          <p>Information organization, data management, and digital literacy. Relevant coursework: Database Design for Libraries · Digital Libraries &amp; Resources · Information Processing · Preservation of Information Resources</p>
+        </div>
+        <div class="edu-item">
+          <h3>BS Electronics &amp; Communications Engineering (2 years, 60+ units)</h3>
+          <div class="meta">BISCAST, Naga City · 2018 – 2020</div>
+          <p>Analytical thinking, problem-solving, and a meticulous approach to complex information.</p>
+        </div>
+        <div class="edu-item">
+          <h3>SHS — Computer &amp; Communications Technology</h3>
+          <div class="meta">STI College Cubao · 2016 – 2018</div>
+          <p>Computer systems, network fundamentals, and software applications.</p>
+        </div>
+        <div class="edu-item">
+          <h3>Recognition</h3>
+          <p>Top Performer, English Immersive Environment Award (2 years) · Feature Writer, <em>The DEMOCRAT</em> · Service Awardee, Community Extensions Volunteers</p>
+        </div>
+      </div>
+      <div>
+        <ul class="cert-list">
+          <li>Microsoft Digital Literacy — TESDA Online Program</li>
+          <li>Azure AI Fundamentals — TESDA Online Program</li>
+          <li>What Is Generative AI? — LinkedIn Learning</li>
+          <li>Impactful Writing Skills (US English) — Wadhwani Foundation</li>
+          <li>Statistics 101 — IBM</li>
+          <li>Wi-Fi 101 &amp; Digital Thumbprint — TESDA Online Program</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-box">
+      <div class="sec-label" style="color:#f5b57e;">Contact</div>
+      <h2>Let's work together.</h2>
+      <p class="lead">If your operations need someone precise, reliable, and easy to work with — I'd love to hear from you.</p>
+      <a class="btn" href="mailto:aiacapricho@gmail.com">Email me →</a>
+      <div class="contact-links">
+        <div><span class="label">Email</span><a href="mailto:aiacapricho@gmail.com">aiacapricho@gmail.com</a></div>
+        <div><span class="label">Phone / SMS</span><a href="tel:+639685863037">+63 968 586 3037</a></div>
+        <div><span class="label">LinkedIn</span><a href="https://linkedin.com/in/aia-nyll-capricho-9aa18b381" target="_blank" rel="noopener">aia-nyll-capricho</a></div>
+        <div><span class="label">Off-duty</span><a href="https://www.instagram.com/potatoepoopy" target="_blank" rel="noopener">@potatoepoopy</a></div>
+      </div>
+      <p style="margin-top:26px; font-size:.85rem; color:#8d8378;">Naga City, Philippines — working remotely, worldwide.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 Aia Nyll Capricho · Built with HTML &amp; CSS (yes, by me)</div>
+</footer>
+
+</body>
+</html>
